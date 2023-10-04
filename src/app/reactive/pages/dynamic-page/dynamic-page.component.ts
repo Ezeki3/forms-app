@@ -56,6 +56,10 @@ export class DynamicPageComponent implements OnInit {
     return null;
   }
 
+  onDeleteFavorite( index: number ):void {
+    this.favoriteGames.removeAt(index);
+  }
+
   onSubmit(): void {
     console.log(this.myForm.value)
 
