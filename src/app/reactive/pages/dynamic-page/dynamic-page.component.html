@@ -24,10 +24,12 @@
 
             <div class="input-group">
                 <input class="form-control"
-                    placeholder="Agregar favorito">
+                    placeholder="Agregar favorito"
+                    [formControl]="newFavorite">
 
 
-                <button class="btn btn-outline-primary"
+                <button (click)="addToFavorites()"
+                  class="btn btn-outline-primary"
                     type="button">
                     Agregar favorito
                 </button>
@@ -68,7 +70,7 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <button type="submit" (click)="onSubmit()"
+            <button type="submit" 
                     class="btn btn-primary float-end"
                     >
                     <!-- [disabled]="myForm.invalid" -->
@@ -83,13 +85,13 @@
 
 
 <span>Valid</span>
-<pre>{{ 'object' | json }}</pre>
+<pre>{{ myForm.valid | json }}</pre>
 <br>
 
 <span>Value</span>
-<pre>{{ 'object' | json }}</pre>
+<pre>{{ myForm.value | json }}</pre>
 <br>
 
 <span>Agregar Juego</span>
-<pre>{{ 'object' | json }}</pre>
-<pre>{{ 'object' | json }}</pre>
+<pre>{{ newFavorite.valid | json }}</pre>
+<pre>{{ newFavorite.value | json }}</pre>
