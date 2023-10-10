@@ -18,6 +18,10 @@ export class RegisterPageComponent implements OnInit {
     username: ['', [Validators.required, this._validatorsService.cantBeStrider] ],
     password: ['', [Validators.required, Validators.minLength(6)] ],
     password2: ['', [Validators.required] ],
+  }, {
+    Validators: [
+      this._validatorsService.isFieldEqualFieldTwo('password', 'password2'),
+    ]
   })
 
   constructor(
